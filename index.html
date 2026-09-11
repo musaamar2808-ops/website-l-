@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amsu Sanitär GmbH - Sanitäranlagen & Montage in Freiburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #0066cc;
+        }
+        
+        .phone {
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        .btn-primary:hover {
+            background: #f0f0f0;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #0066cc;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 32px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: #666;
+        }
+        
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .card h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            padding: 8px 0;
+            color: #666;
+        }
+        
+        .about-section {
+            background: #f9f9f9;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .why-us {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .why-us-item {
+            text-align: center;
+        }
+        
+        .why-us-item h4 {
+            font-size: 24px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .contact-section {
+            background: #f9f9f9;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-us {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                gap: 15px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Amsu Sanitär GmbH</div>
+            <nav>
+                <a href="#home">Startseite</a>
+                <a href="#about">Über uns</a>
+                <a href="#services">Leistungen</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+            <div class="phone">0123 456789</div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h1>Sanitäranlagen & Montage in Freiburg</h1>
+            <p>Amsu Sanitär GmbH – saubere Handwerksarbeit rund ums Wasser</p>
+            <p>Wir planen, montieren und warten Sanitäranlagen für Bad, Küche und Haustechnik – mit sorgfältiger Ausführung, transparenter Beratung und Terminen, auf die Sie sich verlassen können.</p>
+            <div class="btn-group">
+                <button class="btn btn-primary">Kontakt aufnehmen</button>
+                <button class="btn btn-secondary">Unsere Leistungen</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stat-item">
+            <h3>15+ Jahre</h3>
+            <p>Erfahrung im Sanitärhandwerk</p>
+        </div>
+        <div class="stat-item">
+            <h3>600+</h3>
+            <p>abgeschlossene Projekte</p>
+        </div>
+        <div class="stat-item">
+            <h3>Meisterbetrieb</h3>
+            <p>geprüfte Qualität</p>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <h2>Über uns</h2>
+        <div class="about-content">
+            <div>
+                <h3>Handwerk, dem Kundinnen und Kunden vertrauen</h3>
+                <p>Die Amsu Sanitär GmbH ist ein inhabergeführter Fachbetrieb für Sanitärtechnik. Wir begleiten Projekte von der ersten Beratung bis zur letzten Dichtungsprobe – bei privaten Badsanierungen ebenso wie bei gewerblichen Installationen.</p>
+                <p style="margin-top: 15px;">Für uns beginnt gute Sanitärtechnik lange vor dem ersten Rohrschnitt: mit einer ehrlichen Einschätzung, einem klaren Angebot und einem Zeitplan, der zu Ihrem Alltag passt. Während der Montage achten wir auf saubere Übergänge, geschützte Böden und eine Baustelle, die Sie jeden Tag wieder betreten können, ohne sich zu ärgern.</p>
+            </div>
+            <div>
+                <h3>Warum Amsu Sanitär?</h3>
+                <ul style="margin-top: 20px;">
+                    <li><strong style="color: #0066cc;">Qualität</strong> Markenkomponenten und geprüfte Ausführung nach aktuellem Regelwerk.</li>
+                    <li><strong style="color: #0066cc;">Zuverlässigkeit</strong> Vereinbarte Termine und realistische Zeitpläne, an die wir uns halten.</li>
+                    <li><strong style="color: #0066cc;">Saubere Montage</strong> Geschützte Bereiche, sorgfältige Ausführung und aufgeräumte Übergabe.</li>
+                    <li><strong style="color: #0066cc;">Professionelle Beratung</strong> Verständliche Erklärungen statt Fachchinesisch, ehrliche Angebote.</li>
+                    <li><strong style="color: #0066cc;">Kundenorientiertes Arbeiten</strong> Wir planen um Ihren Alltag herum, nicht umgekehrt.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="why-us" style="margin-top: 50px;">
+            <div class="why-us-item">
+                <h4>4,8 / 5</h4>
+                <p>durchschnittliche Kundenbewertung</p>
+            </div>
+            <div class="why-us-item">
+                <h4>24 Std.</h4>
+                <p>Rückmeldung auf Anfragen</p>
+            </div>
+            <div class="why-us-item">
+                <h4>100 %</h4>
+                <p>Festpreis-Angebote</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <h2>Leistungen</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;">Sanitärtechnik aus einer Hand</p>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;">Von der ersten Planung bis zur laufenden Wartung übernehmen wir die komplette Sanitärtechnik – abgestimmt auf Neubau, Sanierung oder Instandhaltung.</p>
+        
+        <div class="section-content">
+            <div class="card">
+                <h3>Badinstallation</h3>
+                <p>Komplette Badplanung und -montage, vom Rohbau bis zur letzten Fuge.</p>
+                <ul>
+                    <li>✓ Duschen, Wannen & Armaturen</li>
+                    <li>✓ Barrierearme Badlösungen</li>
+                    <li>✓ Fliesenvorbereitung & Abdichtung</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Sanitärmontage</h3>
+                <p>Fachgerechte Montage aller Sanitärobjekte in Neubau und Bestand.</p>
+                <ul>
+                    <li>✓ WCs, Waschtische & Bidets</li>
+                    <li>✓ Küchen- & Hausanschlüsse</li>
+                    <li>✓ Abstimmung mit Fliesenlegern & Elektrikern</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Wasserinstallation</h3>
+                <p>Trink- und Abwasserleitungen fachgerecht geplant und verlegt.</p>
+                <ul>
+                    <li>✓ Trinkwasserleitungen nach Norm</li>
+                    <li>✓ Abwasser- & Entwässerungssysteme</li>
+                    <li>✓ Druckprüfung & Dichtheitskontrolle</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Reparatur & Wartung</h3>
+                <p>Regelmäßige Wartung und schnelle Reparatur, bevor kleine Probleme groß werden.</p>
+                <ul>
+                    <li>✓ Leckortung & Undichtigkeiten</li>
+                    <li>✓ Wartungsverträge für Objekte</li>
+                    <li>✓ Austausch von Armaturen & Ventilen</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Notdienst</h3>
+                <p>Bei akuten Rohrbrüchen und Wasserschäden sind wir kurzfristig vor Ort.</p>
+                <ul>
+                    <li>✓ Schnelle Schadensbegrenzung</li>
+                    <li>✓ Provisorische & dauerhafte Reparatur</li>
+                    <li>✓ Dokumentation für die Versicherung</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="margin-bottom: 20px; color: #666;">Nicht sicher, welche Leistung zu Ihrem Vorhaben passt? Wir beraten Sie unverbindlich und erstellen ein passendes Angebot.</p>
+            <button class="btn btn-primary">Beratung anfragen</button>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <h2>Kontakt</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;">Sprechen Sie mit uns über Ihr Projekt</p>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Kontaktdaten</h3>
+                <div class="contact-item">
+                    <strong>Telefon</strong>
+                    <a href="tel:0123456789">0123 456789</a>
+                </div>
+                <div class="contact-item">
+                    <strong>E-Mail</strong>
+                    <a href="mailto:info@amsu-sanitaer.de">info@amsu-sanitaer.de</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Adresse</strong>
+                    Musterstraße 12<br>79098 Freiburg
+                </div>
+                <div class="contact-item">
+                    <strong>Öffnungszeiten</strong>
+                    Montag – Freitag 08:00 – 17:00 Uhr
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Anfrage stellen</h3>
+                <p style="margin-bottom: 20px; color: #666;">Ob kurze Rückfrage oder komplette Badsanierung – wir melden uns in der Regel innerhalb eines Werktags mit einer Rückmeldung.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, #0066cc 0%, #004999 100%); color: white; padding: 60px 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="margin-bottom: 20px;">Bereit für Ihr Sanitärprojekt?</h2>
+            <p style="margin-bottom: 30px; font-size: 18px;">Schildern Sie uns kurz Ihr Vorhaben – wir melden uns in der Regel innerhalb eines Werktags mit einer Rückmeldung.</p>
+            <div class="btn-group">
+                <a href="mailto:info@amsu-sanitaer.de" class="btn btn-primary">E-Mail schreiben</a>
+                <a href="tel:0123456789" class="btn btn-secondary">Telefonnummer kopieren</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Startseite</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <ul>
+                    <li><a href="tel:0123456789">0123 456789</a></li>
+                    <li><a href="mailto:info@amsu-sanitaer.de">info@amsu-sanitaer.de</a></li>
+                    <li>Musterstraße 12, 79098 Freiburg</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Amsu Sanitär GmbH</h4>
+                <p>Sanitäranlagen und Montage in Freiburg – Qualität, die hält.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Amsu Sanitär GmbH — Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 10px; font-size: 12px; color: #777;">Musterwebsite zu Testzwecken. Unternehmen und Kontaktdaten sind fiktiv.</p>
+        </div>
+    </footer>
+</body>
+</html>
